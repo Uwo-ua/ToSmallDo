@@ -1,1 +1,5 @@
 env/
+.*.css
+.*.py
+.*.py.swp
+_pycache_/
