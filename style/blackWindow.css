@@ -1,12 +1,16 @@
-QDialog, QPushButton {
+QDialog, QWidget, QLabel {
     color: rgb(255, 255, 255);
     background: rgb(22, 22, 22);
 }
 
 QPushButton {
-    border-style: solid;
-    border-width: 2px;
+    width: 40px;
+    height: 20px;
+    color: rgb(255, 255, 255);
+    background: rgb(22, 22, 22);
+    border-style: outset;    
+    border-width: 4px;
     border-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 10%;
 }
 

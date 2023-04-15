@@ -10,6 +10,8 @@ import sys
 import time
 import platform
 
+from window.about import AboutWindow
+
 STATUSBAR = f" {time.ctime()} | {platform.system()} "
 
 MOUNTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -49,6 +51,9 @@ class UI(QMainWindow):
         uic.loadUi("app.ui", self)
         self.setWindowTitle(f"{CD[2]} {CD[1]} {CD[0]}")
         self.setStyleSheet(whiteTheme)
+        """ About window init """
+        self.aboutWindow = AboutWindow()
+        self.aboutWindow.setStyleSheet(whiteThemeWindow)
         """ Main elements"""
         self.menubar = self.findChild(QMenuBar, "menubar")
         self.statusbar = self.findChild(QStatusBar, "statusbar")
@@ -93,7 +98,7 @@ class UI(QMainWindow):
         self.changeTheme.triggered.connect(self.changeTheme_)
         self.changeFont.triggered.connect(self.changeFont_)
         self.exit.triggered.connect(self.exit_)
-        self.about.triggered.connect(self.about_)
+        self.about.aboutToShow.connect(self.about_)
     
         self.treeBlock.itemChanged.connect(self.checked)
 
@@ -152,6 +157,7 @@ class UI(QMainWindow):
     def changeTheme_(self):
             self.changeThemeWindow = QDialog()
             self.changeThemeWindow.setStyleSheet(whiteThemeWindow)
+            self.changeThemeWindow.setGeometry(0, 0, 100, 50)
             layout = QHBoxLayout(self.changeThemeWindow)
             black = QPushButton("black")
             black.clicked.connect(self.toBlack)
@@ -169,9 +175,11 @@ class UI(QMainWindow):
     def toBlack(self):
          self.setStyleSheet(blackTheme)
          self.changeThemeWindow.setStyleSheet(blackThemeWindow)
+         self.aboutWindow.setStyleSheet(blackThemeWindow)
     def toWhite(self):
          self.setStyleSheet(whiteTheme)
          self.changeThemeWindow.setStyleSheet(whiteThemeWindow)
+         self.aboutWindow.setStyleSheet(whiteThemeWindow)
 
     def changeFont_(self):
             self.changeFontWindow = QDialog()
@@ -202,7 +210,9 @@ class UI(QMainWindow):
         self.taskBlock.setFont(newfont)
         self.changeFontWindow.accept()
 
-    def about_(self): pass
+    def about_(self):
+        print("Click about button")
+        self.aboutWindow.show_()
     def exit_(self):
         sys.exit()
     def checked(self, item, column):
