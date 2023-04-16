@@ -1,5 +1,5 @@
 env/
 .*.css
 .*.py
-.*.py.swp
+.*.*.swp
 _pycache_/
