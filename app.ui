@@ -14,11 +14,18 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton{
+   <string notr="true">QMainWindow, QMenuBar, QStatusBar,QTextEdit, QTreeWidget {
+	color: rgb(255, 255, 255);
+	background: rgb(22, 22, 22);
+}
+
+QPushButton{
+	color: rgb(255, 255, 255);
+	background: rgb(40, 40, 40);
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 10%;
-	border-color: rgb(0, 0, 0);
+	border-color: rgb(255, 255, 255);
 	item-align: center;
 }
                                        QCheckBox::indicator {
@@ -73,8 +80,34 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
      <string>CR</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>400</y>
+      <width>79</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QFontComboBox" name="fontComboBox">
+    <property name="geometry">
+     <rect>
+      <x>256</x>
+      <y>340</y>
+      <width>349</width>
+      <height>23</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -125,11 +158,6 @@
    <addaction name="menuEdit"/>
    <addaction name="menuAppereanc"/>
    <addaction name="menuAbout"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
   </widget>
   <action name="actionOpentaskfromtxtfile">
    <property name="text">

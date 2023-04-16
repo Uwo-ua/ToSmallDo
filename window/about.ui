@@ -18,6 +18,17 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="0">
       <widget class="QPushButton" name="closeBtn">
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background: rgb(40, 40, 40);
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 10%;
+	border-color: rgb(255, 255, 255);
+	item-align: center;
+}</string>
+       </property>
        <property name="text">
         <string>Close</string>
        </property>

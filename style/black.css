@@ -10,17 +10,17 @@ QPushButton{
     border-width: 2px;
     border-radius: 10%;
     border-color: rgb(255, 255, 255);
-    item-align: center;
 }
-QCheckBox::indicator {
-        width:35px;
-        height:35px;
-      background-color: rgb(85, 255, 127);
-        border-style: solid;
-        border-width: 2px;
-        border-radius: 12px;
-        border-color: black;
+
+
+QPushButton:hover {
+    opacity: 20%;
+    background: rgb(45, 45, 45);
 }
-QCheckBox::indicator:checked {
-        background-color: rgb(255, 71, 71);
+
+QTreeWidget::item {
+    width: 80%;
+    height: 15%;
 }
+
+

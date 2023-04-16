@@ -14,3 +14,8 @@ QPushButton {
     border-radius: 10%;
 }
 
+QPushButton:hover {
+    opacity: 20%;
+    background: rgb(45, 45, 45);
+}
+
